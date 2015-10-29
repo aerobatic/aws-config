@@ -1,3 +1,8 @@
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+
 Reduce boilerplate code by encapsulating common configuration setup when working with the Node [aws-sdk](http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-intro.html).
 
 Takes care of the following:
@@ -40,3 +45,12 @@ AWS.config = awsConfig();
 
 var s3 = new AWS.S3();
 ~~~
+
+[npm-image]: https://img.shields.io/npm/v/aws-config.svg?style=flat
+[npm-url]: https://npmjs.org/package/htmlprep
+[travis-image]: https://img.shields.io/travis/4front/aws-config.svg?style=flat
+[travis-url]: https://travis-ci.org/4front/aws-config
+[coveralls-image]: https://img.shields.io/coveralls/4front/aws-config.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/4front/aws-config?branch=master
+[downloads-image]: https://img.shields.io/npm/dm/aws-config.svg?style=flat
+[downloads-url]: https://npmjs.org/package/aws-config

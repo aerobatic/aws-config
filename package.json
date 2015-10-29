@@ -1,6 +1,6 @@
 {
   "name": "aws-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Encapsulates boilerplate AWS config setup",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,6 @@
   "author": "David Von Lehman (https://github.com/dvonlehman)",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.0",
     "aws-sdk": "^2.1.47",
     "https-proxy-agent": "^1.0.0"
   },
