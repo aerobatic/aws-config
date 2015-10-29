@@ -1,0 +1,37 @@
+{
+  "name": "aws-config",
+  "version": "1.0.0",
+  "description": "Encapsulates boilerplate AWS config setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4front/aws-config"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "aws-sdk",
+    "config"
+  ],
+  "author": "David Von Lehman (https://github.com/dvonlehman)",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.0",
+    "aws-sdk": "^2.1.47",
+    "https-proxy-agent": "^1.0.0"
+  },
+  "devDependencies": {
+    "dash-assert": "^1.0.3",
+    "eslint": "^1.7.3",
+    "eslint-config-4front": "^1.0.0",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.16.1"
+  }
+}
