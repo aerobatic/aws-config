@@ -5,7 +5,8 @@ module.exports = function(options) {
   if (!options) options = {};
 
   var awsOptions = {};
-  var awsAttributes = ['accessKeyId', 'secretAccessKey', 'region', 'timeout'];
+  var awsAttributes = ['accessKeyId', 'secretAccessKey', 'sessionToken', 'region',
+    'timeout', 'logger', 'sslEnabled'];
 
   if (options) {
     awsAttributes.forEach(function(attr) {
@@ -44,7 +45,7 @@ module.exports = function(options) {
   }
 
   // Configure the proxy
-  if (process.env.HTTPS_PROXY) {
+  if (process.env.HTTPS_PROXY && options.sslEnabled !== false) {
     if (!awsOptions.httpOptions.agent) {
       var HttpsProxyAgent = require('https-proxy-agent');
       awsOptions.httpOptions.agent = new HttpsProxyAgent(process.env.HTTPS_PROXY);

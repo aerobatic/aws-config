@@ -3,7 +3,8 @@
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-Reduce boilerplate code by encapsulating common configuration setup when working with the Node [aws-sdk](http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-intro.html).
+Reduce boilerplate code when configuring the AWS Node.js SDK.
+http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
 
 Takes care of the following:
 * Handles corporate proxy via [https-proxy-agent](https://www.npmjs.com/package/https-proxy-agent)  if `HTTPS_PROXY` environment variable exists.
@@ -21,6 +22,8 @@ npm install aws-config
 ~~~js
 awsConfig({
   region: 'us-east-1'                  // explicitly set AWS region
+  sslEnabled: true,                    // override whether SSL is enabled
+  maxRetries: 3,                       // override the number of retries for a request
   accessKeyId: 'your_aws_access_key',  // can omit access key and secret key
   secretAccessKey: 'your_secret_key'   // if relying on a profile or IAM
   profile: 'profile_name',             // name of profile from ~/.aws/credentials
