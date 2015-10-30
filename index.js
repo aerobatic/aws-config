@@ -1,5 +1,4 @@
 var AWS = require('aws-sdk');
-require('dash-assert');
 
 module.exports = function(options) {
   if (!options) options = {};

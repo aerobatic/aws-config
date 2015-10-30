@@ -1,6 +1,6 @@
 {
   "name": "aws-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Encapsulates boilerplate AWS config setup",
   "main": "index.js",
   "scripts": {
