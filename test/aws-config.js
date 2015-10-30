@@ -2,6 +2,8 @@ var assert = require('assert');
 var AWS = require('aws-sdk');
 var awsConfig = require('..');
 
+require('dash-assert');
+
 describe('awsConfig', function() {
   it('ignore non-supported attributes', function() {
     var options = {
