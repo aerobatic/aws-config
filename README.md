@@ -10,6 +10,7 @@ Takes care of the following:
 * Handles corporate proxy via [https-proxy-agent](https://www.npmjs.com/package/https-proxy-agent)  if `HTTPS_PROXY` environment variable exists.
 * Utilize a named profile from `.aws/credentials` file if `profile` option specified
 * Support `AWS_TIMEOUT` environment variable to enforce a maximum timeout for all AWS SDK operations
+* Honors the `AWS_DEFAULT_PROFILE` and `AWS_DEFAULT_REGION` environment variables used by the [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment).
 
 ## Installation
 

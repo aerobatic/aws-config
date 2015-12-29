@@ -3,6 +3,9 @@ var AWS = require('aws-sdk');
 module.exports = function(options) {
   if (!options) options = {};
 
+  if (!options.region) options.region = process.env.AWS_DEFAULT_REGION;
+  if (!options.profile) options.profile = process.env.AWS_DEFAULT_PROFILE;
+
   var awsOptions = {};
   var awsAttributes = ['accessKeyId', 'secretAccessKey', 'sessionToken', 'region',
     'timeout', 'logger', 'sslEnabled'];
