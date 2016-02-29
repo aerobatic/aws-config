@@ -4,7 +4,7 @@ var extend = require('extend');
 
 // Incorporate workaround agent settings to deal with Node/OpenSSL issue connecting to DynamoDB
 // https://github.com/aws/aws-sdk-js/issues/862
-var dynamoDbTlsAgentOptions = {
+var httpsAgentWorkaroundOptions = {
   rejectUnauthorized: true,
   keepAlive: true,                // workaround part i.
   secureProtocol: 'TLSv1_method', // workaround part ii.
@@ -62,8 +62,8 @@ module.exports = function(options) {
     if (!awsOptions.httpOptions.agent) {
       var HttpsProxyAgent = require('https-proxy-agent');
       var proxyOpts = url.parse(process.env.HTTPS_PROXY);
-      if (options.dynamoTlsWorkaround) {
-        extend(proxyOpts, dynamoDbTlsAgentOptions);
+      if (options.httpsAgentWorkaround === true) {
+        extend(proxyOpts, httpsAgentWorkaroundOptions);
       }
       awsOptions.httpOptions.agent = new HttpsProxyAgent(proxyOpts);
     }
