@@ -1,6 +1,6 @@
 {
   "name": "aws-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Encapsulates boilerplate AWS config setup",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1.47",
+    "extend": "^3.0.0",
     "https-proxy-agent": "^1.0.0"
   },
   "devDependencies": {
