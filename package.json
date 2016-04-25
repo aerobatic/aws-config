@@ -1,6 +1,6 @@
 {
   "name": "aws-config",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Encapsulates boilerplate AWS config setup",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   "dependencies": {
     "aws-sdk": "^2.1.47",
     "extend": "^3.0.0",
-    "https-proxy-agent": "^1.0.0"
+    "https-proxy-agent": "^1.0.0",
+    "is-ec2": "^1.0.0"
   },
   "devDependencies": {
     "dash-assert": "^1.0.3",

@@ -2,6 +2,7 @@ var AWS = require('aws-sdk');
 var url = require('url');
 var https = require('https');
 var extend = require('extend');
+var isec2 = require('is-ec2');
 
 // Incorporate workaround agent settings to deal with Node/OpenSSL issue connecting to DynamoDB
 // https://github.com/aws/aws-sdk-js/issues/862
@@ -11,6 +12,8 @@ var httpsAgentWorkaroundOptions = {
   secureProtocol: 'TLSv1_method', // workaround part ii.
   ciphers: 'ALL'                  // workaround part ii.
 };
+
+var isEc2 = isec2();
 
 module.exports = function(options) {
   if (!options) options = {};
@@ -58,8 +61,8 @@ module.exports = function(options) {
     delete awsOptions.profile;
   }
 
-  // Configure the proxy
-  if (options.sslEnabled !== false) {
+  // Configure the proxy, but not if we are on EC2.
+  if (options.sslEnabled !== false && isEc2 !== true) {
     if (process.env.HTTPS_PROXY) {
       var HttpsProxyAgent = require('https-proxy-agent');
       var proxyOpts = url.parse(process.env.HTTPS_PROXY);
