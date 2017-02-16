@@ -23,7 +23,7 @@ module.exports = function(options) {
 
   var awsOptions = {};
   var awsAttributes = ['accessKeyId', 'secretAccessKey', 'sessionToken', 'region',
-    'timeout', 'logger', 'sslEnabled'];
+    'timeout', 'logger', 'sslEnabled', 'endpoint'];
 
   if (options) {
     awsAttributes.forEach(function(attr) {
