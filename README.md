@@ -51,10 +51,10 @@ var s3 = new AWS.S3();
 ~~~
 
 [npm-image]: https://img.shields.io/npm/v/aws-config.svg?style=flat
-[npm-url]: https://npmjs.org/package/htmlprep
-[travis-image]: https://img.shields.io/travis/4front/aws-config.svg?style=flat
-[travis-url]: https://travis-ci.org/4front/aws-config
-[coveralls-image]: https://img.shields.io/coveralls/4front/aws-config.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/4front/aws-config?branch=master
+[npm-url]: https://npmjs.org/package/aws-config
+[travis-image]: https://img.shields.io/travis/aerobatic/aws-config.svg?style=flat
+[travis-url]: https://travis-ci.org/aerobatic/aws-config
+[coveralls-image]: https://img.shields.io/coveralls/aerobatic/aws-config.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/aerobatic/aws-config?branch=master
 [downloads-image]: https://img.shields.io/npm/dm/aws-config.svg?style=flat
 [downloads-url]: https://npmjs.org/package/aws-config

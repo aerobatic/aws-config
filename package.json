@@ -1,6 +1,6 @@
 {
   "name": "aws-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Encapsulates boilerplate AWS config setup",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/4front/aws-config"
+    "url": "https://github.com/aerobatic/aws-config"
   },
   "files": [
     "index.js"
@@ -22,17 +22,16 @@
   "author": "David Von Lehman (https://github.com/dvonlehman)",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.1.47",
+    "aws-sdk": "^2.14.0",
     "extend": "^3.0.0",
     "https-proxy-agent": "^1.0.0",
     "is-ec2": "^1.0.0"
   },
   "devDependencies": {
-    "dash-assert": "^1.0.3",
-    "eslint": "^1.7.3",
-    "eslint-config-4front": "^1.0.0",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.3.3",
-    "sinon": "^1.16.1"
+    "dash-assert": "^1.2.0",
+    "eslint": "^3.15.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7"
   }
 }
