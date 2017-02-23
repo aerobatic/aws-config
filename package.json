@@ -25,7 +25,7 @@
     "aws-sdk": "^2.14.0",
     "extend": "^3.0.0",
     "https-proxy-agent": "^1.0.0",
-    "is-ec2": "^1.0.0"
+    "is-ec2": "^1.0.1"
   },
   "devDependencies": {
     "dash-assert": "^1.2.0",
