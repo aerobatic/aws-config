@@ -1,7 +1,6 @@
 var AWS = require("aws-sdk");
 var url = require("url");
 var https = require("https");
-var extend = require("extend");
 var isec2 = require("is-ec2");
 
 // Incorporate workaround agent settings to deal with Node/OpenSSL issue connecting to DynamoDB
@@ -63,20 +62,13 @@ module.exports = function(options) {
     awsOptions.httpOptions.timeout = options.timeout;
   }
 
-  if (options.profile) {
-    awsOptions.credentials = new AWS.SharedIniFileCredentials({
-      profile: options.profile
-    });
-    delete awsOptions.profile;
-  }
-
   // Configure the proxy, but not if we are on EC2.
   if (options.sslEnabled !== false && isEc2 !== true) {
     if (process.env.HTTPS_PROXY) {
       var HttpsProxyAgent = require("https-proxy-agent");
       var proxyOpts = url.parse(process.env.HTTPS_PROXY);
       if (options.httpsAgentWorkaround === true) {
-        extend(proxyOpts, httpsAgentWorkaroundOptions);
+        proxyOpts = { ... proxyOpts, ... httpsAgentWorkaroundOptions };
       }
       awsOptions.httpOptions.agent = new HttpsProxyAgent(proxyOpts);
     } else if (options.httpsAgentWorkaround === true) {
@@ -84,6 +76,22 @@ module.exports = function(options) {
         httpsAgentWorkaroundOptions
       );
     }
+  }
+  if (options.profile) {
+    awsOptions.credentials = new AWS.SharedIniFileCredentials({
+      profile: options.profile
+    });
+    delete awsOptions.profile;
+  } else if (process.env.AWS_WEB_IDENTITY_TOKEN_FILE) {
+    // support for kubernetes service accounts linked to IAM roles:
+    //    https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/
+    awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials(
+      { 
+        ... awsOptions,
+        // VPC endpoint friendly
+        stsRegionalEndpoints: 'regional'
+      }
+    );
   }
 
   return awsOptions;

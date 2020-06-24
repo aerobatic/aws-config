@@ -5,7 +5,7 @@ module.exports = {
     es6: true
   },
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 11,
     sourceType: 'module',
     ecmaFeatures: {}
   },
