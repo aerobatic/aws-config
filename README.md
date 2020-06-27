@@ -11,6 +11,7 @@ Takes care of the following:
 * Utilize a named profile from `.aws/credentials` file if `profile` option specified
 * Support `AWS_TIMEOUT` environment variable to enforce a maximum timeout for all AWS SDK operations
 * Honors the `AWS_DEFAULT_PROFILE` and `AWS_DEFAULT_REGION` environment variables used by the [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment).
+* Honors the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable used for web token based authentication for [kubernetes service accounts](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts/)
 
 ## Installation
 
